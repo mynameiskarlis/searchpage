@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            margin-right: 10px;
+        }
+        button {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Search Something</h1>
+    <input type="text" id="searchBox" placeholder="Enter search query...">
+    <button onclick="performSearch()">Search</button>
+
+    <script>
+        function performSearch() {
+            const query = document.getElementById("searchBox").value;
+            if (query) {
+                window.location.href = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+            } else {
+                alert("Please enter a search term!");
+            }
+        }
+    </script>
+</body>
+</html>
